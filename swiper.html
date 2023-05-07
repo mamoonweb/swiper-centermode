@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+
+.swiper-container {
+    position: relative;
+    width: 80vw;
+    height: 300px;
+    margin: 0 auto;
+}
+ .swiper-container > .swiper-slide__content {
+	 position: absolute;
+	 top: 0;
+}
+ .swiper-slide {
+	 height: 300px;
+	 display: flex;
+	 background: #eee;
+	 align-items: center;
+	 justify-content: center;
+	 transition: all 200ms linear;
+}
+ .swiper-slide.swiper-slide-active {
+	 transform: scale(1);
+	 background: #fc0;
+}
+ .swiper-slide__content {
+	 height: 300px;
+}
+
+.slider-1{
+    overflow: hidden;
+}
+ 
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+<!-- Slider main container -->
+
+<section class="slider-1">
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1
+            </div>
+            <div class="swiper-slide">Slide 2
+            </div>
+            <div class="swiper-slide">Slide 3
+            </div>
+            <div class="swiper-slide">Slide 4
+            </div>
+            <div class="swiper-slide">Slide 5
+            </div>
+            <div class="swiper-slide">Slide 6
+            </div>
+            <div class="swiper-slide">Slide 7
+            </div>
+            <div class="swiper-slide">Slide 8
+            </div>
+            <div class="swiper-slide">Slide 9
+            </div>
+            <div class="swiper-slide">Slide 10
+            </div>
+            <div class="swiper-slide">Slide 11
+            </div>
+        </div>
+          <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+    </div>
+</section>
+    
+
+  <!-- Swiper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+
+$(document).ready(function() {
+  // Assign some jquery elements we'll need
+  var $swiper = $(".swiper-container");
+  var $bottomSlide = null; // Slide whose content gets 'extracted' and placed
+  // into a fixed position for animation purposes
+  var $bottomSlideContent = null; // Slide content that gets passed between the
+  // panning slide stack and the position 'behind'
+  // the stack, needed for correct animation style
+
+  var mySwiper = new Swiper(".swiper-container", {
+    spaceBetween: 1,
+    slidesPerView: 3,
+    centeredSlides: true,
+    roundLengths: true,
+    loop: true,
+    loopAdditionalSlides: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+});
+
+  </script>
+</body>
+
+</html>
